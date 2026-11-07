@@ -91,10 +91,7 @@
       <div class="nav-wrap">
         <div class="nav-left">
           <a class="brand" href="#top" aria-label="返回首页">
-            <span class="brand-mark" aria-hidden="true">
-              <span>脱口秀</span>
-              <i></i>
-            </span>
+            <img class="brand-logo" src="assets/images/logo-round.jpg" alt="" />
             <span class="brand-copy">
               <strong>海外华语脱口秀俱乐部</strong>
               <small>OVERSEAS CHINESE STAND-UP COMEDY CLUB</small>
@@ -154,13 +151,14 @@
             </ul>
           </div>
 
-          <div class="hero-visual reveal" aria-label="俱乐部主视觉照片占位">
+          <div class="hero-visual reveal">
             <div class="stage-lines" aria-hidden="true"></div>
-            <div class="photo-placeholder photo-placeholder-hero">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>俱乐部合影</strong>
-              <small>照片待添加</small>
-            </div>
+            <img
+              class="hero-photo"
+              src="assets/images/hero-team.jpg"
+              alt="海外华语脱口秀俱乐部成员合影"
+              fetchpriority="high"
+            />
             <div class="hero-sticker" aria-hidden="true">
               <span>15</span>
               <small>个州的声音</small>
@@ -313,8 +311,14 @@
           </div>
 
           <div class="previous-show reveal">
-            <span>上一场</span>
-            <p>硅谷场已于 2026 年 10 月 11 日在 Cupertino 圆满举行，十五位演员登台。</p>
+            <div class="previous-show-copy">
+              <span>上一场</span>
+              <p>硅谷场已于 2026 年 10 月 11 日在 Cupertino 圆满举行，十五位演员登台。</p>
+            </div>
+            <div class="previous-show-posters" aria-label="硅谷场演出海报">
+              <img src="assets/images/poster-silicon-valley-cast.jpg" alt="硅谷场演员阵容海报" loading="lazy" />
+              <img src="assets/images/poster-silicon-valley-program.jpg" alt="硅谷场节目单海报" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
@@ -326,27 +330,15 @@
             <h2 id="moments-title">精彩瞬间</h2>
             <p>用笑声记录每一次相遇。活动照片将在这里陆续更新。</p>
           </div>
-          <div class="gallery-grid" aria-label="活动照片占位">
-            <div class="gallery-card gallery-card-wide photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>舞台大合影</strong><small>照片待添加</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>俱乐部活动</strong><small>照片待添加</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>演员风采</strong><small>照片待添加</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>演出花絮</strong><small>照片待添加</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>观众互动</strong><small>照片待添加</small>
-            </div>
+          <div class="gallery-grid" aria-label="俱乐部活动照片">
+            <div class="gallery-card gallery-card-wide reveal"><img src="assets/images/moment-full-cast.jpg" alt="俱乐部演员与嘉宾大合影" loading="lazy" /></div>
+            <div class="gallery-card gallery-card-panorama reveal"><img src="assets/images/moment-audience.jpg" alt="硅谷场现场观众" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="assets/images/moment-curtain-call.jpg" alt="硅谷场演出谢幕合影" loading="lazy" /></div>
+            <div class="gallery-card gallery-card-contain reveal"><img src="assets/images/moment-team-cutout.jpg" alt="俱乐部演员合影" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="assets/images/moment-stage-guests.jpg" alt="俱乐部成员与舞台嘉宾合影" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="assets/images/moment-blue-team.jpg" alt="身着蓝色队服的俱乐部成员合影" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="assets/images/moment-performer-grid.jpg" alt="硅谷场演员舞台风采拼图" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="assets/images/moment-community.jpg" alt="俱乐部成员活动合影" loading="lazy" /></div>
           </div>
         </div>
       </section>
@@ -411,7 +403,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="brand-mark brand-mark-small" aria-hidden="true"><span>脱口秀</span><i></i></span>
+          <img class="footer-logo" src="assets/images/logo-wordmark.jpg" alt="" />
           <div>
             <strong>海外华语脱口秀俱乐部</strong>
             <small>OVERSEAS CHINESE STAND-UP COMEDY CLUB</small>

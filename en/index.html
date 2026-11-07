@@ -91,10 +91,7 @@
       <div class="nav-wrap">
         <div class="nav-left">
           <a class="brand" href="#top" aria-label="Back to home">
-            <span class="brand-mark" aria-hidden="true">
-              <span>脱口秀</span>
-              <i></i>
-            </span>
+            <img class="brand-logo" src="../assets/images/logo-round.jpg" alt="" />
             <span class="brand-copy">
               <strong>Overseas Chinese Stand-Up Comedy Club</strong>
               <small>海外华语脱口秀俱乐部</small>
@@ -154,13 +151,14 @@
             </ul>
           </div>
 
-          <div class="hero-visual reveal" aria-label="Club group photo placeholder">
+          <div class="hero-visual reveal">
             <div class="stage-lines" aria-hidden="true"></div>
-            <div class="photo-placeholder photo-placeholder-hero">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>Club Group Photo</strong>
-              <small>Photo coming soon</small>
-            </div>
+            <img
+              class="hero-photo"
+              src="../assets/images/hero-team.jpg"
+              alt="Members of the Overseas Chinese Stand-Up Comedy Club"
+              fetchpriority="high"
+            />
             <div class="hero-sticker" aria-hidden="true">
               <span>15</span>
               <small>states represented</small>
@@ -310,8 +308,14 @@
           </div>
 
           <div class="previous-show reveal">
-            <span>Previous show</span>
-            <p>Our Silicon Valley show took place in Cupertino on October 11, 2026, featuring fifteen performers.</p>
+            <div class="previous-show-copy">
+              <span>Previous show</span>
+              <p>Our Silicon Valley show took place in Cupertino on October 11, 2026, featuring fifteen performers.</p>
+            </div>
+            <div class="previous-show-posters" aria-label="Silicon Valley show posters">
+              <img src="../assets/images/poster-silicon-valley-cast.jpg" alt="Silicon Valley show cast poster" loading="lazy" />
+              <img src="../assets/images/poster-silicon-valley-program.jpg" alt="Silicon Valley show program poster" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
@@ -321,29 +325,17 @@
           <div class="section-heading reveal">
             <p class="kicker">ON STAGE</p>
             <h2 id="moments-title">Shared Moments</h2>
-            <p>Every gathering leaves a story. Event photos will be added here soon.</p>
+            <p>Every gathering leaves a story. More event photos will be added here over time.</p>
           </div>
-          <div class="gallery-grid" aria-label="Event photo placeholders">
-            <div class="gallery-card gallery-card-wide photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>Cast &amp; Crew</strong><small>Photo coming soon</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>Club Events</strong><small>Photo coming soon</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>Performers</strong><small>Photo coming soon</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>Backstage</strong><small>Photo coming soon</small>
-            </div>
-            <div class="gallery-card photo-placeholder reveal">
-              <span class="placeholder-icon" aria-hidden="true">＋</span>
-              <strong>With Our Audience</strong><small>Photo coming soon</small>
-            </div>
+          <div class="gallery-grid" aria-label="Club event photos">
+            <div class="gallery-card gallery-card-wide reveal"><img src="../assets/images/moment-full-cast.jpg" alt="Club performers and guests together" loading="lazy" /></div>
+            <div class="gallery-card gallery-card-panorama reveal"><img src="../assets/images/moment-audience.jpg" alt="Audience at the Silicon Valley show" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="../assets/images/moment-curtain-call.jpg" alt="Cast at the Silicon Valley curtain call" loading="lazy" /></div>
+            <div class="gallery-card gallery-card-contain reveal"><img src="../assets/images/moment-team-cutout.jpg" alt="Club performers together" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="../assets/images/moment-stage-guests.jpg" alt="Club members with stage guests" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="../assets/images/moment-blue-team.jpg" alt="Club members wearing blue team shirts" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="../assets/images/moment-performer-grid.jpg" alt="Silicon Valley performers on stage" loading="lazy" /></div>
+            <div class="gallery-card reveal"><img src="../assets/images/moment-community.jpg" alt="Club members at a community event" loading="lazy" /></div>
           </div>
         </div>
       </section>
@@ -408,7 +400,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="brand-mark brand-mark-small" aria-hidden="true"><span>脱口秀</span><i></i></span>
+          <img class="footer-logo" src="../assets/images/logo-wordmark.jpg" alt="" />
           <div>
             <strong>Overseas Chinese Stand-Up Comedy Club</strong>
             <small>海外华语脱口秀俱乐部</small>
