@@ -113,6 +113,13 @@ select {
   gap: 32px;
 }
 
+.nav-left {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -170,6 +177,35 @@ select {
   font-weight: 600;
   letter-spacing: 0.14em;
   opacity: 0.68;
+}
+
+.language-picker {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.language-picker select {
+  min-height: 36px;
+  padding: 0 28px 0 12px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.language-picker select:hover,
+.language-picker select:focus-visible {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.language-picker option {
+  color: var(--ink);
+  background: var(--white);
 }
 
 .site-nav {
@@ -338,6 +374,27 @@ select {
 
 .hero h1 span {
   color: var(--gold-light);
+}
+
+.page-en .hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(43px, 4.8vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.page-en .section-heading h2,
+.page-en .cta-section h2,
+.page-en .founder-name,
+.page-en .show-content h3,
+.page-en .principle h3,
+.page-en .work-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page-en .mission-statement {
+  font-size: clamp(34px, 4.5vw, 58px);
+  letter-spacing: -0.025em;
 }
 
 .hero-en {
@@ -539,6 +596,13 @@ select {
   margin-top: 5px;
   font-size: 11px;
   font-weight: 700;
+}
+
+.page-en .hero-sticker small {
+  max-width: 72px;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .scroll-cue {
@@ -1281,6 +1345,10 @@ select {
     gap: 20px;
   }
 
+  .nav-left {
+    gap: 13px;
+  }
+
   .hero-inner {
     gap: 45px;
   }
@@ -1354,6 +1422,10 @@ select {
   .nav-cta {
     margin-top: 12px;
     padding: 11px 28px;
+  }
+
+  .page-en .site-nav > a:not(.nav-cta) {
+    font-family: Georgia, "Times New Roman", serif;
   }
 
   .hero {
@@ -1440,6 +1512,16 @@ select {
     font-size: 13px;
   }
 
+  .brand-copy {
+    display: none;
+  }
+
+  .language-picker select {
+    min-height: 34px;
+    padding-right: 23px;
+    font-size: 11px;
+  }
+
   .hero-inner {
     margin-top: 112px;
     gap: 45px;
@@ -1447,6 +1529,10 @@ select {
 
   .hero h1 {
     font-size: clamp(40px, 12vw, 55px);
+  }
+
+  .page-en .hero h1 {
+    font-size: clamp(37px, 10.5vw, 50px);
   }
 
   .hero-en {

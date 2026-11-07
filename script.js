@@ -3,6 +3,22 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
 const sections = [...document.querySelectorAll('main section[id]')];
+const languageSelect = document.querySelector('#language-select');
+const isEnglish = document.body.dataset.language === 'en';
+const menuLabels = isEnglish
+  ? { open: 'Open navigation', close: 'Close navigation' }
+  : { open: '打开导航', close: '关闭导航' };
+
+if (languageSelect) {
+  languageSelect.addEventListener('change', () => {
+    const target = languageSelect.value === 'en'
+      ? languageSelect.dataset.enUrl
+      : languageSelect.dataset.zhUrl;
+    const destination = new URL(target, window.location.href);
+    destination.hash = window.location.hash;
+    window.location.href = destination.href;
+  });
+}
 
 function updateHeader() {
   header.classList.toggle('scrolled', window.scrollY > 30);
@@ -13,7 +29,7 @@ function closeMenu() {
   navigation.classList.remove('open');
   header.classList.remove('menu-visible');
   document.body.classList.remove('menu-open');
-  menuToggle.querySelector('.sr-only').textContent = '打开导航';
+  menuToggle.querySelector('.sr-only').textContent = menuLabels.open;
 }
 
 menuToggle.addEventListener('click', () => {
@@ -22,7 +38,7 @@ menuToggle.addEventListener('click', () => {
   navigation.classList.toggle('open', willOpen);
   header.classList.toggle('menu-visible', willOpen);
   document.body.classList.toggle('menu-open', willOpen);
-  menuToggle.querySelector('.sr-only').textContent = willOpen ? '关闭导航' : '打开导航';
+  menuToggle.querySelector('.sr-only').textContent = willOpen ? menuLabels.close : menuLabels.open;
 });
 
 navLinks.forEach((link) => link.addEventListener('click', closeMenu));
