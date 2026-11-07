@@ -622,6 +622,16 @@ select {
   line-height: 1.95;
 }
 
+.about-copy .about-english {
+  margin: 27px 0;
+  padding: 17px 20px;
+  color: var(--navy-800);
+  background: rgba(234, 244, 255, 0.72);
+  border-left: 3px solid var(--blue-500);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
 .about-note {
   position: relative;
   padding: 40px 34px 34px;
