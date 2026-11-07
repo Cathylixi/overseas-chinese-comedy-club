@@ -1468,17 +1468,23 @@ select {
 }
 
 .founder-photo {
-  min-height: 440px;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  align-self: center;
   border-radius: 5px 5px 80px 5px;
   color: var(--white);
-  background:
-    linear-gradient(145deg, rgba(18, 105, 206, 0.92), rgba(7, 29, 64, 0.98)),
-    var(--navy-800);
+  background: var(--navy-950);
   box-shadow: var(--shadow);
 }
 
-.founder-photo strong {
-  font-size: 31px;
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .founder-copy {
@@ -2006,7 +2012,7 @@ select {
   }
 
   .founder-photo {
-    max-width: 600px;
+    max-width: 480px;
   }
 
   .sponsor-visual {
@@ -2290,7 +2296,7 @@ select {
   }
 
   .founder-photo {
-    min-height: 340px;
+    max-width: 100%;
   }
 
   .works-grid {
