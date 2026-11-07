@@ -135,4 +135,63 @@ lightbox?.addEventListener('close', () => {
   if (lightboxImage) lightboxImage.removeAttribute('src');
 });
 
+const trainingDialog = document.querySelector('#training-dialog');
+const trainingOpeners = [...document.querySelectorAll('[data-training-dialog]')];
+const trainingClose = trainingDialog?.querySelector('.training-close');
+const trainingForm = trainingDialog?.querySelector('#training-form');
+
+function closeTrainingDialog() {
+  if (trainingDialog?.open) trainingDialog.close();
+}
+
+trainingOpeners.forEach((opener) => {
+  opener.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeMenu();
+    if (trainingDialog && !trainingDialog.open) trainingDialog.showModal();
+  });
+});
+
+trainingClose?.addEventListener('click', closeTrainingDialog);
+trainingDialog?.addEventListener('click', (event) => {
+  if (event.target === trainingDialog) closeTrainingDialog();
+});
+
+trainingForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(trainingForm);
+  const details = {
+    name: formData.get('name'),
+    age: formData.get('age'),
+    location: formData.get('location'),
+    email: formData.get('email'),
+    wechat: formData.get('wechat'),
+  };
+  const subject = isEnglish
+    ? 'Cohort 7 Training Registration'
+    : '第七期海外华语脱口秀俱乐部培训报名';
+  const body = isEnglish
+    ? [
+        'Cohort 7 Training Registration',
+        '',
+        `Name: ${details.name}`,
+        `Age: ${details.age}`,
+        `Country and City: ${details.location}`,
+        `Email: ${details.email}`,
+        `WeChat ID: ${details.wechat}`,
+      ]
+    : [
+        '第七期海外华语脱口秀俱乐部培训报名',
+        '',
+        `姓名：${details.name}`,
+        `年龄：${details.age}`,
+        `所在国家及城市：${details.location}`,
+        `电子邮箱：${details.email}`,
+        `微信号：${details.wechat}`,
+      ];
+
+  window.location.href = `mailto:namccct@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join('\n'))}`;
+});
+
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();

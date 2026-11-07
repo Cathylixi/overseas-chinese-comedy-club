@@ -123,7 +123,7 @@
           <a href="#shows">近期演出</a>
           <a href="#moments">精彩瞬间</a>
           <a href="#founder">创始人</a>
-          <a class="nav-cta" href="mailto:namccct@gmail.com">培训报名</a>
+          <a class="nav-cta" href="#training" data-training-dialog>培训报名</a>
         </nav>
       </div>
     </header>
@@ -465,13 +465,58 @@
           <p class="kicker">JOIN THE CLUB</p>
           <h2 id="cta-title">把你的故事，讲给世界听</h2>
           <p>欢迎热爱表达、愿意分享真实经历的海外华人加入我们。</p>
-          <a class="button button-light" href="mailto:namccct@gmail.com">
+          <a class="button button-light" href="#training" data-training-dialog>
             培训报名 <span aria-hidden="true">→</span>
           </a>
           <a class="cta-email" href="mailto:namccct@gmail.com">namccct@gmail.com</a>
         </div>
       </section>
     </main>
+
+    <dialog class="training-dialog" id="training-dialog" aria-labelledby="training-dialog-title">
+      <button class="training-close" type="button" aria-label="关闭培训报名表">×</button>
+      <div class="training-shell">
+        <header class="training-header">
+          <p class="kicker">COHORT 07 · 2027</p>
+          <h2 id="training-dialog-title">第七期海外华语脱口秀俱乐部培训报名表</h2>
+          <p>连续八天的小班 Zoom 课程，从真实经历出发，学习把自己的故事讲上舞台。</p>
+        </header>
+
+        <div class="training-grid">
+          <section class="training-details" aria-labelledby="training-details-title">
+            <h3 id="training-details-title">课程信息</h3>
+            <div class="training-table-wrap">
+              <table class="training-table">
+                <caption class="sr-only">第七期培训课程信息</caption>
+                <tbody>
+                  <tr><th scope="row">招生对象</th><td>45—75 岁海外华人，所在国家不限</td></tr>
+                  <tr><th scope="row">授课方式</th><td>Zoom 线上授课</td></tr>
+                  <tr><th scope="row">开课日期</th><td>2027 年 2 月 16 日至 23 日，连续 8 天</td></tr>
+                  <tr><th scope="row">上课时间</th><td>美国西部时间，每晚 7:00—8:00</td></tr>
+                  <tr><th scope="row">课程安排</th><td>共 8 节课，每节 60 分钟</td></tr>
+                  <tr><th scope="row">课程费用</th><td>每节课 60 美元，全期共 480 美元</td></tr>
+                  <tr><th scope="row">招生人数</th><td>小班教学，每班限 10 人，招满为止</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="training-registration" aria-labelledby="training-registration-title">
+            <h3 id="training-registration-title">报名信息</h3>
+            <form class="training-form" id="training-form">
+              <label><span>姓名</span><input type="text" name="name" autocomplete="name" required /></label>
+              <label><span>年龄</span><input type="number" name="age" min="45" max="75" inputmode="numeric" required /></label>
+              <label class="training-field-wide"><span>所在国家及城市</span><input type="text" name="location" autocomplete="address-level2" required /></label>
+              <label class="training-field-wide"><span>电子邮箱</span><input type="email" name="email" autocomplete="email" required /></label>
+              <label class="training-field-wide"><span>微信号</span><input type="text" name="wechat" autocomplete="off" required /></label>
+              <p class="training-privacy">以上信息仅用于本期培训报名、课程安排及相关联系。</p>
+              <button class="button training-submit" type="submit">生成报名邮件 <span aria-hidden="true">→</span></button>
+              <small>点击后将打开您的邮件应用，请确认内容后发送。</small>
+            </form>
+          </section>
+        </div>
+      </div>
+    </dialog>
 
     <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
       <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>

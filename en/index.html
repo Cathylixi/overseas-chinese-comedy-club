@@ -123,7 +123,7 @@
           <a href="#shows">Shows</a>
           <a href="#moments">Moments</a>
           <a href="#founder">Founder</a>
-          <a class="nav-cta" href="mailto:namccct@gmail.com">Join Us</a>
+          <a class="nav-cta" href="#training" data-training-dialog>Join Us</a>
         </nav>
       </div>
     </header>
@@ -462,13 +462,58 @@
           <p class="kicker">JOIN THE CLUB</p>
           <h2 id="cta-title">Tell Your Story to the World</h2>
           <p>We welcome overseas Chinese adults who love expression and are ready to share authentic experiences.</p>
-          <a class="button button-light" href="mailto:namccct@gmail.com">
+          <a class="button button-light" href="#training" data-training-dialog>
             Training &amp; Registration <span aria-hidden="true">→</span>
           </a>
           <a class="cta-email" href="mailto:namccct@gmail.com">namccct@gmail.com</a>
         </div>
       </section>
     </main>
+
+    <dialog class="training-dialog" id="training-dialog" aria-labelledby="training-dialog-title">
+      <button class="training-close" type="button" aria-label="Close training registration form">×</button>
+      <div class="training-shell">
+        <header class="training-header">
+          <p class="kicker">COHORT 07 · 2027</p>
+          <h2 id="training-dialog-title">Cohort 7 Training Registration</h2>
+          <p>Eight consecutive days of small-group Zoom classes, helping participants shape authentic experiences into stories for the stage.</p>
+        </header>
+
+        <div class="training-grid">
+          <section class="training-details" aria-labelledby="training-details-title">
+            <h3 id="training-details-title">Course Information</h3>
+            <div class="training-table-wrap">
+              <table class="training-table">
+                <caption class="sr-only">Cohort 7 course information</caption>
+                <tbody>
+                  <tr><th scope="row">Eligibility</th><td>Overseas Chinese adults ages 45–75, in any country</td></tr>
+                  <tr><th scope="row">Format</th><td>Live classes on Zoom</td></tr>
+                  <tr><th scope="row">Dates</th><td>February 16–23, 2027 · 8 consecutive days</td></tr>
+                  <tr><th scope="row">Time</th><td>7:00–8:00 PM U.S. Pacific Time</td></tr>
+                  <tr><th scope="row">Schedule</th><td>8 classes · 60 minutes each</td></tr>
+                  <tr><th scope="row">Tuition</th><td>US$60 per class · US$480 total</td></tr>
+                  <tr><th scope="row">Class Size</th><td>10 students per class; enrollment closes when full</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="training-registration" aria-labelledby="training-registration-title">
+            <h3 id="training-registration-title">Registration Details</h3>
+            <form class="training-form" id="training-form">
+              <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
+              <label><span>Age</span><input type="number" name="age" min="45" max="75" inputmode="numeric" required /></label>
+              <label class="training-field-wide"><span>Country and City</span><input type="text" name="location" autocomplete="address-level2" required /></label>
+              <label class="training-field-wide"><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+              <label class="training-field-wide"><span>WeChat ID</span><input type="text" name="wechat" autocomplete="off" required /></label>
+              <p class="training-privacy">This information will be used only for this training registration, course arrangements, and related communication.</p>
+              <button class="button training-submit" type="submit">Create Registration Email <span aria-hidden="true">→</span></button>
+              <small>This opens your email app so you can review the message before sending.</small>
+            </form>
+          </section>
+        </div>
+      </div>
+    </dialog>
 
     <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
       <button class="lightbox-close" type="button" aria-label="Close full-screen photo">×</button>
