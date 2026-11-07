@@ -1563,7 +1563,7 @@ select {
 
 .sponsor-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
   gap: clamp(36px, 7vw, 90px);
   align-items: center;
 }
@@ -1593,6 +1593,9 @@ select {
 }
 
 .sponsor-visual {
+  width: 100%;
+  max-width: 400px;
+  justify-self: end;
   padding: clamp(16px, 3vw, 28px);
   background: var(--white);
   border: 1px solid rgba(13, 49, 104, 0.1);
@@ -2016,7 +2019,8 @@ select {
   }
 
   .sponsor-visual {
-    max-width: 720px;
+    max-width: 400px;
+    justify-self: center;
   }
 
   .lightbox-shell {
@@ -2285,6 +2289,10 @@ select {
 
   .sponsor-copy > p:not(.kicker) {
     font-size: 15px;
+  }
+
+  .sponsor-visual {
+    max-width: 320px;
   }
 
   .lightbox-shell > img {
