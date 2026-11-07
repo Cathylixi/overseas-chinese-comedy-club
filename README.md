@@ -16,4 +16,4 @@ python3 -m http.server 8000
 
 ## 发布
 
-仓库包含 GitHub Pages 自动发布工作流。首次发布前，请在仓库的 **Settings → Pages → Build and deployment** 中将 Source 设为 **GitHub Actions**。之后每次推送到 `main` 分支都会自动更新网站。
+在仓库的 **Settings → Pages → Build and deployment** 中选择 **Deploy from a branch**，然后将分支设为 `main`、目录设为 `/(root)` 并保存。之后每次推送到 `main` 分支都会自动更新网站。
