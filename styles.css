@@ -1143,6 +1143,15 @@ select {
   object-fit: contain;
 }
 
+.gallery-card-performer-grid {
+  grid-column: span 2;
+  background: #efb2df;
+}
+
+.gallery-card-performer-grid img {
+  object-fit: contain;
+}
+
 .founder {
   background: #fbfaf6;
 }
@@ -1731,7 +1740,8 @@ select {
   }
 
   .gallery-card-wide,
-  .gallery-card-panorama {
+  .gallery-card-panorama,
+  .gallery-card-performer-grid {
     grid-column: auto;
     grid-row: auto;
   }
