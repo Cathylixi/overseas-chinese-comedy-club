@@ -1177,14 +1177,16 @@ select {
 
 .tour-map-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.65fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(250px, 0.6fr);
   gap: clamp(30px, 6vw, 72px);
   align-items: center;
 }
 
 .map-surface {
   position: relative;
-  min-height: clamp(430px, 48vw, 560px);
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   background:
     radial-gradient(circle at 38% 52%, rgba(39, 137, 239, 0.19), transparent 35%),
@@ -1202,9 +1204,28 @@ select {
 }
 
 .map-land {
-  fill: rgba(255, 255, 255, 0.055);
-  stroke: rgba(255, 255, 255, 0.15);
+  fill: rgba(255, 255, 255, 0.075);
+  stroke: rgba(255, 255, 255, 0.22);
   stroke-width: 2;
+}
+
+.map-land-island {
+  fill: rgba(255, 255, 255, 0.035);
+}
+
+.map-border {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 5;
+}
+
+.map-country-label {
+  fill: rgba(255, 255, 255, 0.18);
+  font-family: Georgia, serif;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-anchor: middle;
 }
 
 .map-route {
@@ -1611,9 +1632,9 @@ select {
 }
 
 .training-dialog {
-  width: min(960px, calc(100% - 32px));
+  width: min(860px, calc(100vw - clamp(24px, 6vw, 72px)));
   max-width: none;
-  max-height: calc(100dvh - 32px);
+  max-height: min(90dvh, 920px);
   padding: 0;
   overflow: hidden;
   color: var(--ink);
@@ -1629,7 +1650,7 @@ select {
 }
 
 .training-shell {
-  max-height: calc(100dvh - 32px);
+  max-height: min(90dvh, 920px);
   padding: clamp(32px, 5vw, 58px);
   overflow-y: auto;
   background:
@@ -1659,8 +1680,8 @@ select {
 .training-grid {
   margin-top: 38px;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
   align-items: start;
 }
 
@@ -1706,7 +1727,8 @@ select {
 }
 
 .training-registration {
-  padding: 24px;
+  width: 100%;
+  padding: clamp(22px, 4vw, 32px);
   background: var(--white);
   border: 1px solid rgba(13, 49, 104, 0.1);
   border-radius: 18px;
@@ -2175,7 +2197,8 @@ select {
   }
 
   .map-surface {
-    min-height: 500px;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
 
   .city-list {
@@ -2442,7 +2465,8 @@ select {
   }
 
   .map-surface {
-    min-height: 430px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
     border-radius: 18px;
   }
 
@@ -2462,7 +2486,11 @@ select {
   }
 
   .map-pin small {
-    font-size: 8px;
+    display: none;
+  }
+
+  .map-country-label {
+    font-size: 11px;
   }
 
   .map-pin:nth-of-type(2) {
@@ -2493,7 +2521,8 @@ select {
   }
 
   .training-dialog {
-    width: min(100% - 16px, 960px);
+    width: calc(100vw - 16px);
+    max-width: 860px;
     max-height: calc(100dvh - 16px);
     border-radius: 18px;
   }
