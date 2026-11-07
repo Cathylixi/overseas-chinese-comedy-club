@@ -17,6 +17,8 @@
   --serif: "Noto Serif SC", "Songti SC", serif;
   --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --content: 1180px;
+  --page-gutter: clamp(16px, 3vw, 48px);
+  --section-space: clamp(72px, 8vw, 110px);
 }
 
 * {
@@ -30,6 +32,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--cream);
   font-family: var(--sans);
@@ -44,6 +47,12 @@ body.menu-open {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
 }
 
 button,
@@ -104,8 +113,8 @@ select {
 }
 
 .nav-wrap {
-  width: min(calc(100% - 48px), var(--content));
-  height: 82px;
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--content));
+  height: clamp(70px, 6vw, 82px);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -353,12 +362,17 @@ select {
 .hero-inner {
   position: relative;
   z-index: 2;
-  width: min(calc(100% - 48px), var(--content));
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--content));
   margin: 112px auto 80px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
-  gap: clamp(50px, 8vw, 108px);
+  gap: clamp(34px, 6vw, 84px);
+}
+
+.hero-copy,
+.hero-visual {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -492,7 +506,8 @@ select {
 
 .hero-visual {
   position: relative;
-  min-height: 490px;
+  min-height: 0;
+  padding: clamp(18px, 3vw, 34px) 0;
   display: grid;
   place-items: center;
 }
@@ -500,9 +515,10 @@ select {
 .hero-photo {
   position: relative;
   z-index: 1;
-  width: 94%;
-  height: 400px;
-  object-fit: cover;
+  width: min(94%, 680px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
   object-position: center;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 20px;
@@ -595,10 +611,10 @@ select {
 .hero-sticker {
   position: absolute;
   z-index: 2;
-  right: -18px;
-  bottom: 28px;
-  width: 112px;
-  height: 112px;
+  right: 0;
+  bottom: clamp(4px, 2vw, 28px);
+  width: clamp(82px, 8vw, 112px);
+  height: clamp(82px, 8vw, 112px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -659,11 +675,11 @@ select {
 }
 
 .section {
-  padding: 110px 0;
+  padding: var(--section-space) 0;
 }
 
 .section-inner {
-  width: min(calc(100% - 48px), var(--content));
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--content));
   margin: 0 auto;
 }
 
@@ -694,7 +710,7 @@ select {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1.55fr 0.65fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.65fr);
   gap: clamp(40px, 8vw, 100px);
   align-items: start;
 }
@@ -866,7 +882,7 @@ select {
 
 .principles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -924,6 +940,7 @@ select {
 }
 
 .show-card {
+  min-width: 0;
   overflow: hidden;
   background: var(--white);
   border: 1px solid rgba(13, 49, 104, 0.1);
@@ -1023,6 +1040,7 @@ select {
 .event-details dd {
   margin: 0;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .cast-list {
@@ -1086,13 +1104,14 @@ select {
 
 .previous-show-posters {
   display: grid;
-  grid-template-columns: repeat(2, 82px);
+  grid-template-columns: repeat(2, clamp(72px, 7vw, 82px));
   gap: 10px;
 }
 
 .previous-show-posters img {
-  width: 82px;
-  height: 106px;
+  width: clamp(72px, 7vw, 82px);
+  height: auto;
+  aspect-ratio: 0.773;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 7px 18px rgba(7, 29, 64, 0.16);
@@ -1105,12 +1124,13 @@ select {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 190px;
+  grid-auto-rows: clamp(150px, 14vw, 190px);
   gap: 16px;
 }
 
 .gallery-card {
   overflow: hidden;
+  min-width: 0;
   min-height: 100%;
   border-radius: 8px;
   background: var(--white);
@@ -1158,7 +1178,7 @@ select {
 
 .founder-profile {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
   align-items: stretch;
   gap: clamp(40px, 8vw, 95px);
 }
@@ -1198,16 +1218,18 @@ select {
 
 .founder-copy p:not(.founder-name):not(.founder-role) {
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .works-grid {
   margin-top: 72px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
 .work-card {
+  min-width: 0;
   padding: 31px;
   background: var(--white);
   border: 1px solid var(--line);
@@ -1242,6 +1264,7 @@ select {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
+  overflow-wrap: anywhere;
 }
 
 .cta-section {
@@ -1400,13 +1423,13 @@ select {
   outline-offset: 4px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1180px) {
   .brand-copy {
     display: none;
   }
 
   .site-nav {
-    gap: 20px;
+    gap: 18px;
   }
 
   .nav-left {
@@ -1414,7 +1437,7 @@ select {
   }
 
   .hero-inner {
-    gap: 45px;
+    gap: clamp(28px, 4vw, 45px);
   }
 
   .hero h1 {
@@ -1422,7 +1445,7 @@ select {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 940px) {
   html {
     scroll-padding-top: 70px;
   }
@@ -1507,13 +1530,17 @@ select {
   }
 
   .hero-visual {
-    min-height: 420px;
+    min-height: 0;
   }
 
-  .hero-photo,
+  .hero-photo {
+    width: min(100%, 620px);
+    height: auto;
+  }
+
   .photo-placeholder-hero {
     width: min(100%, 620px);
-    height: 360px;
+    min-height: 360px;
   }
 
   .scroll-cue {
@@ -1549,7 +1576,7 @@ select {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
-    grid-auto-rows: 220px;
+    grid-auto-rows: clamp(190px, 28vw, 260px);
   }
 
   .gallery-card-wide {
@@ -1633,12 +1660,17 @@ select {
   }
 
   .hero-visual {
-    min-height: 330px;
+    min-height: 0;
   }
 
-  .hero-photo,
+  .hero-photo {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
   .photo-placeholder-hero {
-    height: 300px;
+    min-height: 300px;
     transform: none;
   }
 
@@ -1736,7 +1768,7 @@ select {
   .gallery-grid {
     grid-template-columns: 1fr;
     grid-template-rows: none;
-    grid-auto-rows: 240px;
+    grid-auto-rows: auto;
   }
 
   .gallery-card-wide,
@@ -1744,6 +1776,15 @@ select {
   .gallery-card-performer-grid {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .gallery-card {
+    min-height: 0;
+  }
+
+  .gallery-card img {
+    height: auto;
+    object-fit: contain;
   }
 
   .founder-photo {
