@@ -80,4 +80,59 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+const galleryFilters = [...document.querySelectorAll('.gallery-filter')];
+const galleryItems = [...document.querySelectorAll('.gallery-card[data-category]')];
+const lightbox = document.querySelector('#photo-lightbox');
+const lightboxImage = lightbox?.querySelector('.lightbox-shell > img');
+const lightboxDate = lightbox?.querySelector('.lightbox-copy p');
+const lightboxTitle = lightbox?.querySelector('.lightbox-copy h3');
+const lightboxDescription = lightbox?.querySelector('.lightbox-copy span');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+galleryFilters.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    galleryFilters.forEach((filterButton) => {
+      const isActive = filterButton === button;
+      filterButton.classList.toggle('active', isActive);
+      filterButton.setAttribute('aria-pressed', String(isActive));
+    });
+
+    galleryItems.forEach((item) => {
+      item.hidden = filter !== 'all' && item.dataset.category !== filter;
+    });
+  });
+});
+
+function closeLightbox() {
+  if (lightbox?.open) lightbox.close();
+}
+
+galleryItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (!lightbox || !lightboxImage) return;
+
+    const image = item.querySelector('.gallery-media img');
+    const date = item.querySelector('.gallery-hover b');
+    const title = item.querySelector('.gallery-caption strong');
+    const description = item.querySelector('.gallery-caption small');
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    lightboxDate.textContent = date?.textContent || '';
+    lightboxTitle.textContent = title?.textContent || '';
+    lightboxDescription.textContent = description?.textContent || '';
+    lightbox.showModal();
+  });
+});
+
+lightboxClose?.addEventListener('click', closeLightbox);
+lightbox?.addEventListener('click', (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+lightbox?.addEventListener('close', () => {
+  if (lightboxImage) lightboxImage.removeAttribute('src');
+});
+
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();

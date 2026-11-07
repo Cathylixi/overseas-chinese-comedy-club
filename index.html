@@ -323,6 +323,39 @@
         </div>
       </section>
 
+      <section class="section tour-map" id="cities" aria-labelledby="cities-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="kicker">OUR JOURNEY</p>
+            <h2 id="cities-title">演出足迹</h2>
+            <p>从拉斯维加斯出发，让真实的海外华人故事沿着西海岸被更多人听见。</p>
+          </div>
+          <div class="tour-map-layout">
+            <div class="map-surface reveal" role="img" aria-label="俱乐部演出城市地图：拉斯维加斯、洛杉矶、硅谷、西雅图和温哥华">
+              <svg viewBox="0 0 700 430" aria-hidden="true">
+                <path class="map-land" d="M173 26 C130 86 123 142 146 188 C170 236 170 282 212 329 C261 384 370 407 470 371 C548 343 583 290 566 236 C551 187 502 168 483 119 C462 65 405 35 332 30 C271 26 219 7 173 26 Z" />
+                <path class="map-route" d="M321 285 C291 253 275 225 274 195 C273 164 265 133 255 104 C249 82 256 64 268 48" />
+              </svg>
+              <span class="map-pin map-pin-done" style="--x: 46%; --y: 69%;"><i></i><b>拉斯维加斯</b><small>起点</small></span>
+              <span class="map-pin map-pin-done" style="--x: 38%; --y: 73%;"><i></i><b>洛杉矶</b><small>已演出</small></span>
+              <span class="map-pin map-pin-done" style="--x: 36%; --y: 53%;"><i></i><b>硅谷</b><small>2026.10.11</small></span>
+              <span class="map-pin map-pin-next" style="--x: 35%; --y: 29%;"><i></i><b>西雅图</b><small>2026.11.21</small></span>
+              <span class="map-pin map-pin-next" style="--x: 37%; --y: 18%;"><i></i><b>温哥华</b><small>2026.11.22</small></span>
+            </div>
+            <div class="city-list reveal">
+              <p class="city-list-label">一路向北</p>
+              <ol>
+                <li><span>01</span><div><strong>拉斯维加斯</strong><small>俱乐部成立与故事起点</small></div></li>
+                <li><span>02</span><div><strong>洛杉矶</strong><small>中年幽默走进华人社区</small></div></li>
+                <li><span>03</span><div><strong>硅谷</strong><small>总第十一场圆满举行</small></div></li>
+                <li><span>04</span><div><strong>西雅图</strong><small>总第十二场 · 即将上演</small></div></li>
+                <li><span>05</span><div><strong>温哥华</strong><small>总第十三场 · 即将上演</small></div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section moments" id="moments" aria-labelledby="moments-title">
         <div class="section-inner">
           <div class="section-heading reveal">
@@ -330,14 +363,42 @@
             <h2 id="moments-title">精彩瞬间</h2>
             <p>用笑声记录每一次相遇。活动照片将在这里陆续更新。</p>
           </div>
+          <div class="gallery-filters reveal" role="toolbar" aria-label="筛选活动照片">
+            <button class="gallery-filter active" type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button class="gallery-filter" type="button" data-filter="show" aria-pressed="false">演出</button>
+            <button class="gallery-filter" type="button" data-filter="audience" aria-pressed="false">观众</button>
+            <button class="gallery-filter" type="button" data-filter="behind" aria-pressed="false">幕后</button>
+            <button class="gallery-filter" type="button" data-filter="community" aria-pressed="false">俱乐部活动</button>
+          </div>
           <div class="gallery-grid" aria-label="俱乐部活动照片">
-            <div class="gallery-card gallery-card-wide reveal"><img src="assets/images/moment-full-cast.jpg" alt="俱乐部演员与嘉宾大合影" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-panorama reveal"><img src="assets/images/moment-audience.jpg" alt="硅谷场现场观众" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="assets/images/moment-curtain-call.jpg" alt="硅谷场演出谢幕合影" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-contain reveal"><img src="assets/images/moment-team-cutout.jpg" alt="俱乐部演员合影" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="assets/images/moment-stage-guests.jpg" alt="俱乐部成员与舞台嘉宾合影" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-performer-grid reveal"><img src="assets/images/moment-performer-grid.jpg" alt="硅谷场演员舞台风采拼图" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="assets/images/moment-community.jpg" alt="俱乐部成员活动合影" loading="lazy" /></div>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="查看演员与嘉宾大合影">
+              <span class="gallery-media"><img src="assets/images/moment-full-cast.jpg" alt="俱乐部演员与嘉宾大合影" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>演出</em><strong>台前幕后，同台相聚</strong><small>演出结束后，演员与嘉宾在舞台前留下珍贵合影。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="audience" aria-label="查看硅谷场现场观众">
+              <span class="gallery-media"><img src="assets/images/moment-audience.jpg" alt="硅谷场现场观众" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>观众</em><strong>笑声从舞台传到观众席</strong><small>华人社区观众齐聚现场，共同见证俱乐部第十一场演出。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="查看硅谷场谢幕合影">
+              <span class="gallery-media"><img src="assets/images/moment-curtain-call.jpg" alt="硅谷场演出谢幕合影" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>演出</em><strong>鲜花与掌声中的谢幕</strong><small>十五位演员完成演出，在掌声中记录这一晚。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="community" aria-label="查看俱乐部成员合影">
+              <span class="gallery-media"><img src="assets/images/moment-team-cutout.jpg" alt="俱乐部演员合影" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>俱乐部活动</em><strong>一群认真讲故事的人</strong><small>俱乐部成员在主视觉前合影，记录共同成长的时刻。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="behind" aria-label="查看俱乐部成员与嘉宾合影">
+              <span class="gallery-media"><img src="assets/images/moment-stage-guests.jpg" alt="俱乐部成员与舞台嘉宾合影" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>幕后</em><strong>散场之后，故事继续</strong><small>演出结束后，俱乐部成员与嘉宾在后台合影留念。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="查看硅谷场演员舞台风采拼图">
+              <span class="gallery-media"><img src="assets/images/moment-performer-grid.jpg" alt="硅谷场演员舞台风采拼图" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>演出</em><strong>每个人都有自己的舞台</strong><small>演员们用不同的节奏，讲述各自真实的海外生活。</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="community" aria-label="查看俱乐部成员活动合影">
+              <span class="gallery-media"><img src="assets/images/moment-community.jpg" alt="俱乐部成员活动合影" loading="lazy" /><span class="gallery-hover"><b>硅谷场 · 2026.10.11</b><small>查看大图 ＋</small></span></span>
+              <span class="gallery-caption"><em>俱乐部活动</em><strong>因为表达而相遇</strong><small>俱乐部成员与合作伙伴相聚，让舞台之外也充满连接。</small></span>
+            </button>
           </div>
         </div>
       </section>
@@ -386,6 +447,20 @@
         </div>
       </section>
 
+      <section class="section sponsors" id="sponsors" aria-labelledby="sponsors-title">
+        <div class="section-inner sponsor-layout">
+          <div class="sponsor-copy reveal">
+            <p class="kicker">WITH THANKS</p>
+            <h2 id="sponsors-title">赞助机构</h2>
+            <p>感谢 <strong>Marathon Ginseng 马拉松花旗参</strong> 对俱乐部与海外华人舞台表达的支持。</p>
+            <span>让真实的声音走得更远。</span>
+          </div>
+          <div class="sponsor-visual reveal">
+            <img src="assets/images/sponsor-marathon-ginseng.jpg" alt="Marathon Ginseng 马拉松花旗参赞助图片" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
       <section class="cta-section" aria-labelledby="cta-title">
         <div class="cta-inner reveal">
           <p class="kicker">JOIN THE CLUB</p>
@@ -398,6 +473,18 @@
         </div>
       </section>
     </main>
+
+    <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
+      <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+      <div class="lightbox-shell">
+        <img id="lightbox-image" alt="" />
+        <div class="lightbox-copy">
+          <p>硅谷场 · 2026.10.11</p>
+          <h3 id="lightbox-title"></h3>
+          <span id="lightbox-description"></span>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="footer-inner">

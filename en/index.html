@@ -320,6 +320,39 @@
         </div>
       </section>
 
+      <section class="section tour-map" id="cities" aria-labelledby="cities-title">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <p class="kicker">OUR JOURNEY</p>
+            <h2 id="cities-title">Where We Have Performed</h2>
+            <p>Beginning in Las Vegas, authentic overseas Chinese stories are traveling north along the West Coast.</p>
+          </div>
+          <div class="tour-map-layout">
+            <div class="map-surface reveal" role="img" aria-label="Club performance cities: Las Vegas, Los Angeles, Silicon Valley, Seattle, and Vancouver">
+              <svg viewBox="0 0 700 430" aria-hidden="true">
+                <path class="map-land" d="M173 26 C130 86 123 142 146 188 C170 236 170 282 212 329 C261 384 370 407 470 371 C548 343 583 290 566 236 C551 187 502 168 483 119 C462 65 405 35 332 30 C271 26 219 7 173 26 Z" />
+                <path class="map-route" d="M321 285 C291 253 275 225 274 195 C273 164 265 133 255 104 C249 82 256 64 268 48" />
+              </svg>
+              <span class="map-pin map-pin-done" style="--x: 46%; --y: 69%;"><i></i><b>Las Vegas</b><small>Origin</small></span>
+              <span class="map-pin map-pin-done" style="--x: 38%; --y: 73%;"><i></i><b>Los Angeles</b><small>Performed</small></span>
+              <span class="map-pin map-pin-done" style="--x: 36%; --y: 53%;"><i></i><b>Silicon Valley</b><small>Oct. 11, 2026</small></span>
+              <span class="map-pin map-pin-next" style="--x: 35%; --y: 29%;"><i></i><b>Seattle</b><small>Nov. 21, 2026</small></span>
+              <span class="map-pin map-pin-next" style="--x: 37%; --y: 18%;"><i></i><b>Vancouver</b><small>Nov. 22, 2026</small></span>
+            </div>
+            <div class="city-list reveal">
+              <p class="city-list-label">Northbound</p>
+              <ol>
+                <li><span>01</span><div><strong>Las Vegas</strong><small>Where the club and its stories began</small></div></li>
+                <li><span>02</span><div><strong>Los Angeles</strong><small>Midlife humor reaches the community</small></div></li>
+                <li><span>03</span><div><strong>Silicon Valley</strong><small>Show No. 11 completed</small></div></li>
+                <li><span>04</span><div><strong>Seattle</strong><small>Show No. 12 · Coming soon</small></div></li>
+                <li><span>05</span><div><strong>Vancouver</strong><small>Show No. 13 · Coming soon</small></div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section moments" id="moments" aria-labelledby="moments-title">
         <div class="section-inner">
           <div class="section-heading reveal">
@@ -327,14 +360,42 @@
             <h2 id="moments-title">Shared Moments</h2>
             <p>Every gathering leaves a story. More event photos will be added here over time.</p>
           </div>
+          <div class="gallery-filters reveal" role="toolbar" aria-label="Filter event photos">
+            <button class="gallery-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="gallery-filter" type="button" data-filter="show" aria-pressed="false">Shows</button>
+            <button class="gallery-filter" type="button" data-filter="audience" aria-pressed="false">Audience</button>
+            <button class="gallery-filter" type="button" data-filter="behind" aria-pressed="false">Behind the Scenes</button>
+            <button class="gallery-filter" type="button" data-filter="community" aria-pressed="false">Club Life</button>
+          </div>
           <div class="gallery-grid" aria-label="Club event photos">
-            <div class="gallery-card gallery-card-wide reveal"><img src="../assets/images/moment-full-cast.jpg" alt="Club performers and guests together" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-panorama reveal"><img src="../assets/images/moment-audience.jpg" alt="Audience at the Silicon Valley show" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="../assets/images/moment-curtain-call.jpg" alt="Cast at the Silicon Valley curtain call" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-contain reveal"><img src="../assets/images/moment-team-cutout.jpg" alt="Club performers together" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="../assets/images/moment-stage-guests.jpg" alt="Club members with stage guests" loading="lazy" /></div>
-            <div class="gallery-card gallery-card-performer-grid reveal"><img src="../assets/images/moment-performer-grid.jpg" alt="Silicon Valley performers on stage" loading="lazy" /></div>
-            <div class="gallery-card reveal"><img src="../assets/images/moment-community.jpg" alt="Club members at a community event" loading="lazy" /></div>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="View the cast and guest group photo">
+              <span class="gallery-media"><img src="../assets/images/moment-full-cast.jpg" alt="Club performers and guests together" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Show</em><strong>Onstage and together</strong><small>Performers and guests gather for a group photo after the show.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="audience" aria-label="View the Silicon Valley audience">
+              <span class="gallery-media"><img src="../assets/images/moment-audience.jpg" alt="Audience at the Silicon Valley show" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Audience</em><strong>Laughter reaches every row</strong><small>The community gathers to experience the club's eleventh show.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="View the Silicon Valley curtain call">
+              <span class="gallery-media"><img src="../assets/images/moment-curtain-call.jpg" alt="Cast at the Silicon Valley curtain call" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Show</em><strong>Flowers, applause, and a curtain call</strong><small>Fifteen performers mark the end of a memorable evening.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="community" aria-label="View the club team photo">
+              <span class="gallery-media"><img src="../assets/images/moment-team-cutout.jpg" alt="Club performers together" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Club Life</em><strong>People serious about telling stories</strong><small>Members gather in front of the club's show identity.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="behind" aria-label="View club members with stage guests">
+              <span class="gallery-media"><img src="../assets/images/moment-stage-guests.jpg" alt="Club members with stage guests" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Behind the Scenes</em><strong>The story continues after the show</strong><small>Club members and guests share a backstage moment.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="show" aria-label="View the Silicon Valley performer collage">
+              <span class="gallery-media"><img src="../assets/images/moment-performer-grid.jpg" alt="Silicon Valley performers on stage" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Show</em><strong>Everyone has a stage</strong><small>Each performer brings a different rhythm and an honest story.</small></span>
+            </button>
+            <button class="gallery-card reveal" type="button" data-category="community" aria-label="View the club community photo">
+              <span class="gallery-media"><img src="../assets/images/moment-community.jpg" alt="Club members at a community event" loading="lazy" /><span class="gallery-hover"><b>Silicon Valley · Oct. 11, 2026</b><small>View photo ＋</small></span></span>
+              <span class="gallery-caption"><em>Club Life</em><strong>Connected through expression</strong><small>Members and partners meet beyond the stage.</small></span>
+            </button>
           </div>
         </div>
       </section>
@@ -383,6 +444,20 @@
         </div>
       </section>
 
+      <section class="section sponsors" id="sponsors" aria-labelledby="sponsors-title">
+        <div class="section-inner sponsor-layout">
+          <div class="sponsor-copy reveal">
+            <p class="kicker">WITH THANKS</p>
+            <h2 id="sponsors-title">Our Sponsor</h2>
+            <p>With thanks to <strong>Marathon Ginseng</strong> for supporting the club and overseas Chinese voices on stage.</p>
+            <span>Helping authentic stories travel farther.</span>
+          </div>
+          <div class="sponsor-visual reveal">
+            <img src="../assets/images/sponsor-marathon-ginseng.jpg" alt="Marathon Ginseng sponsor image" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
       <section class="cta-section" aria-labelledby="cta-title">
         <div class="cta-inner reveal">
           <p class="kicker">JOIN THE CLUB</p>
@@ -395,6 +470,18 @@
         </div>
       </section>
     </main>
+
+    <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
+      <button class="lightbox-close" type="button" aria-label="Close full-screen photo">×</button>
+      <div class="lightbox-shell">
+        <img id="lightbox-image" alt="" />
+        <div class="lightbox-copy">
+          <p>Silicon Valley · Oct. 11, 2026</p>
+          <h3 id="lightbox-title"></h3>
+          <span id="lightbox-description"></span>
+        </div>
+      </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="footer-inner">
