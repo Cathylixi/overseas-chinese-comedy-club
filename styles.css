@@ -1690,11 +1690,21 @@ select {
 }
 
 .training-qr-image {
+  width: 100%;
   display: block;
   padding: 7px;
   background: var(--white);
+  border: 0;
   border-radius: 11px;
   box-shadow: 0 8px 22px rgba(7, 29, 64, 0.1);
+  cursor: zoom-in;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.training-qr-image:hover,
+.training-qr-image:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(7, 29, 64, 0.16);
 }
 
 .training-qr-image img {
@@ -1714,24 +1724,6 @@ select {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.6;
-}
-
-.training-qr-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-}
-
-.training-qr-actions a {
-  color: var(--blue-700);
-  font-size: 11px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.training-qr-actions a:hover,
-.training-qr-actions a:focus-visible {
-  text-decoration: underline;
 }
 
 .training-grid {
@@ -1973,6 +1965,27 @@ select {
   color: rgba(255, 255, 255, 0.62);
   font-size: 13px;
   line-height: 1.8;
+}
+
+.photo-lightbox.qr-mode {
+  width: min(760px, calc(100% - 32px));
+  background: var(--white);
+}
+
+.photo-lightbox.qr-mode .lightbox-shell {
+  min-height: 0;
+  grid-template-columns: 1fr;
+}
+
+.photo-lightbox.qr-mode .lightbox-shell > img {
+  height: min(86dvh, 720px);
+  padding: clamp(18px, 4vw, 36px);
+  object-fit: contain;
+  background: var(--white);
+}
+
+.photo-lightbox.qr-mode .lightbox-copy {
+  display: none;
 }
 
 .lightbox-close {
