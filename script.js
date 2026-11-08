@@ -145,12 +145,29 @@ function closeTrainingDialog() {
   if (trainingDialog?.open) trainingDialog.close();
 }
 
+function openTrainingDialog() {
+  closeMenu();
+  if (trainingDialog && !trainingDialog.open) trainingDialog.showModal();
+}
+
 trainingOpeners.forEach((opener) => {
   opener.addEventListener('click', (event) => {
     event.preventDefault();
-    closeMenu();
-    if (trainingDialog && !trainingDialog.open) trainingDialog.showModal();
+    openTrainingDialog();
   });
+});
+
+function shouldOpenTrainingDialog() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('registration') === '1' || window.location.hash === '#training';
+}
+
+if (shouldOpenTrainingDialog()) {
+  window.requestAnimationFrame(openTrainingDialog);
+}
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#training') openTrainingDialog();
 });
 
 trainingClose?.addEventListener('click', closeTrainingDialog);

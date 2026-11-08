@@ -1677,6 +1677,63 @@ select {
   font-size: 15px;
 }
 
+.training-qr-card {
+  margin-top: 24px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(13, 49, 104, 0.12);
+  border-radius: 17px;
+}
+
+.training-qr-image {
+  display: block;
+  padding: 7px;
+  background: var(--white);
+  border-radius: 11px;
+  box-shadow: 0 8px 22px rgba(7, 29, 64, 0.1);
+}
+
+.training-qr-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.training-qr-copy strong {
+  color: var(--navy-900);
+  font-family: var(--serif);
+  font-size: 18px;
+}
+
+.training-qr-copy p {
+  margin: 5px 0 9px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.training-qr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.training-qr-actions a {
+  color: var(--blue-700);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.training-qr-actions a:hover,
+.training-qr-actions a:focus-visible {
+  text-decoration: underline;
+}
+
 .training-grid {
   margin-top: 38px;
   display: grid;
@@ -2573,6 +2630,16 @@ select {
 
   .training-header h2 {
     font-size: 29px;
+  }
+
+  .training-qr-card {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 13px;
+    padding: 11px;
+  }
+
+  .training-qr-copy strong {
+    font-size: 16px;
   }
 
   .training-grid {
