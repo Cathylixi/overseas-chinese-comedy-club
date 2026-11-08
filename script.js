@@ -5,6 +5,7 @@ const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
 const sections = [...document.querySelectorAll('main section[id]')];
 const languageSelect = document.querySelector('#language-select');
 const isEnglish = document.body.dataset.language === 'en';
+const trainingEndpoint = 'https://script.google.com/macros/s/AKfycbzjNCScCR0kA_xovZMfS7CFzauU1CzsLwsKaWHiEBaxze-fksghYkch3MIfOOvyawOibg/exec';
 const menuLabels = isEnglish
   ? { open: 'Open navigation', close: 'Close navigation' }
   : { open: '打开导航', close: '关闭导航' };
@@ -157,41 +158,41 @@ trainingDialog?.addEventListener('click', (event) => {
   if (event.target === trainingDialog) closeTrainingDialog();
 });
 
-trainingForm?.addEventListener('submit', (event) => {
+trainingForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const formData = new FormData(trainingForm);
-  const details = {
-    name: formData.get('name'),
-    age: formData.get('age'),
-    location: formData.get('location'),
-    email: formData.get('email'),
-    wechat: formData.get('wechat'),
-  };
-  const subject = isEnglish
-    ? 'Cohort 7 Training Registration'
-    : '第七期海外华语脱口秀俱乐部培训报名';
-  const body = isEnglish
-    ? [
-        'Cohort 7 Training Registration',
-        '',
-        `Name: ${details.name}`,
-        `Age: ${details.age}`,
-        `Country and City: ${details.location}`,
-        `Email: ${details.email}`,
-        `WeChat ID: ${details.wechat}`,
-      ]
-    : [
-        '第七期海外华语脱口秀俱乐部培训报名',
-        '',
-        `姓名：${details.name}`,
-        `年龄：${details.age}`,
-        `所在国家及城市：${details.location}`,
-        `电子邮箱：${details.email}`,
-        `微信号：${details.wechat}`,
-      ];
+  const submitButton = trainingForm.querySelector('.training-submit');
+  const status = trainingForm.querySelector('.training-status');
+  const originalLabel = submitButton.innerHTML;
 
-  window.location.href = `mailto:namccct@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join('\n'))}`;
+  formData.set('source', 'club-website-2027');
+  formData.set('language', isEnglish ? 'en' : 'zh');
+  submitButton.disabled = true;
+  submitButton.textContent = isEnglish ? 'Submitting…' : '正在提交…';
+  status.textContent = '';
+  status.className = 'training-status';
+
+  try {
+    await fetch(trainingEndpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(formData),
+    });
+    trainingForm.reset();
+    status.textContent = isEnglish
+      ? 'Your registration has been submitted. We will contact you by email or WeChat.'
+      : '报名信息已提交，我们会通过电子邮箱或微信与您联系。';
+    status.classList.add('is-success');
+  } catch (error) {
+    status.textContent = isEnglish
+      ? 'Submission failed. Please check your connection and try again.'
+      : '提交失败，请检查网络后重试。';
+    status.classList.add('is-error');
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalLabel;
+  }
 });
 
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();

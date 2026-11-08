@@ -510,14 +510,16 @@
           <section class="training-registration" aria-labelledby="training-registration-title">
             <h3 id="training-registration-title">报名信息</h3>
             <form class="training-form" id="training-form">
+              <label class="training-honeypot" aria-hidden="true"><span>网站</span><input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
               <label><span>姓名</span><input type="text" name="name" autocomplete="name" required /></label>
               <label><span>年龄</span><input type="number" name="age" min="45" max="75" inputmode="numeric" required /></label>
               <label class="training-field-wide"><span>所在国家及城市</span><input type="text" name="location" autocomplete="address-level2" required /></label>
               <label class="training-field-wide"><span>电子邮箱</span><input type="email" name="email" autocomplete="email" required /></label>
               <label class="training-field-wide"><span>微信号</span><input type="text" name="wechat" autocomplete="off" required /></label>
               <p class="training-privacy">以上信息仅用于本期培训报名、课程安排及相关联系。</p>
-              <button class="button training-submit" type="submit">生成报名邮件 <span aria-hidden="true">→</span></button>
-              <small>点击后将打开您的邮件应用，请确认内容后发送。</small>
+              <button class="button training-submit" type="submit">提交报名 <span aria-hidden="true">→</span></button>
+              <p class="training-status" role="status" aria-live="polite"></p>
+              <small>提交后，报名信息会安全写入俱乐部报名表。</small>
             </form>
           </section>
         </div>

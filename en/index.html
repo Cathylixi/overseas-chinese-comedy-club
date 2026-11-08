@@ -507,14 +507,16 @@
           <section class="training-registration" aria-labelledby="training-registration-title">
             <h3 id="training-registration-title">Registration Details</h3>
             <form class="training-form" id="training-form">
+              <label class="training-honeypot" aria-hidden="true"><span>Website</span><input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
               <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
               <label><span>Age</span><input type="number" name="age" min="45" max="75" inputmode="numeric" required /></label>
               <label class="training-field-wide"><span>Country and City</span><input type="text" name="location" autocomplete="address-level2" required /></label>
               <label class="training-field-wide"><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
               <label class="training-field-wide"><span>WeChat ID</span><input type="text" name="wechat" autocomplete="off" required /></label>
               <p class="training-privacy">This information will be used only for this training registration, course arrangements, and related communication.</p>
-              <button class="button training-submit" type="submit">Create Registration Email <span aria-hidden="true">→</span></button>
-              <small>This opens your email app so you can review the message before sending.</small>
+              <button class="button training-submit" type="submit">Submit Registration <span aria-hidden="true">→</span></button>
+              <p class="training-status" role="status" aria-live="polite"></p>
+              <small>Your registration will be securely added to the club registration sheet.</small>
             </form>
           </section>
         </div>
