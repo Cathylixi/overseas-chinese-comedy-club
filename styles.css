@@ -1016,6 +1016,18 @@ select {
     var(--navy-800);
 }
 
+.show-poster-image {
+  min-height: 0;
+  padding: 0;
+  background: #edf7f5;
+}
+
+.show-poster-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .show-poster strong {
   margin-top: 16px;
   font-size: 38px;
