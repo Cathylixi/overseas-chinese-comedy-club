@@ -202,6 +202,10 @@ trainingForm?.addEventListener('submit', async (event) => {
   const status = trainingForm.querySelector('.training-status');
   const originalLabel = submitButton.innerHTML;
 
+  const contact = String(formData.get('contact') || '').trim();
+  formData.set('email', contact.includes('@') ? contact : '');
+  formData.set('wechat', contact.includes('@') ? '' : contact);
+
   formData.set('source', 'club-website-2027');
   formData.set('language', isEnglish ? 'en' : 'zh');
   submitButton.disabled = true;
